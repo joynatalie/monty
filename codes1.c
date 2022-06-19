@@ -36,3 +36,21 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	*stack = new;
 }
+
+/**
+ * op_pall - prints all the values on the stack, from the top
+ * @stack: pointer to the pointer to the first element in stack
+ * @line_number: line number of the instruction
+ */
+void op_pall(stack_t **stack, unsigned int line_number)
+{
+	stack_t *trav = *stack;
+
+	while (trav)
+	{
+		printf("%d\n", trav->n);
+		trav = trav->next;
+	}
+
+	(void)line_number;
+}
